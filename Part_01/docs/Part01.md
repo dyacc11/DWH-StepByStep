@@ -1034,5 +1034,5 @@ It is crucial to start working with clean, correct data from the very beginning:
 ## References
 
 * Baraa Khatib Salkini: [sql-data-warehouse-project](https://github.com/DataWithBaraa/sql-data-warehouse-project)
-* Source code for this article: [DWH Step By Step Part 1](https://github.com/dyacc11/DWH_StepByStep/Part_01)
+* Source code for this article: [DWH Step By Step Part 1](https://github.com/dyacc11/DWH-StepByStep/Part_01)
 

@@ -11,9 +11,14 @@ Each part of the series focuses on a specific aspect of DWH development, such as
 ## Repository Structure
 
 ```mermaid
+---
+config:
+  treeView:
+    showIcons: true
+---
 treeView-beta
   DWH_StepByStep
-    Part_01\
+    Part_01/
     README.md
     LICENSE
 ```
