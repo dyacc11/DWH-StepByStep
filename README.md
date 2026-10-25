@@ -13,7 +13,7 @@ Each part of the series focuses on a specific aspect of DWH development, such as
 ```mermaid
 treeView-beta
   DWH_StepByStep
-    Part_01
+    Part_01\
     README.md
     LICENSE
 ```
