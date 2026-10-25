@@ -65,7 +65,6 @@ The complete article with detailed explanations, SQL code, and diagrams is avail
 ## Related Links
 
 - Original project by Baraa Khatib Salkini: [sql-data-warehouse-project](https://github.com/DataWithBaraa/sql-data-warehouse-project)
-- Full article repository: [DWH_StepByStep](https://github.com/dyacc11/DWH-StepByStep)
 
 ---
 
