@@ -15,61 +15,7 @@ An excellent dataset for such tasks can be found in the GitHub repository prepar
 
 The source data is stored in the `01_datasets/source_crm` directory, and its main structure can be described by the following diagram:
 
-```mermaid
-graph TD
-    %% ===== DESCRIPTIONS (TOP) =====
-    subgraph descriptions[" Table Descriptions"]
-        desc_prd("Has product validity period: start, end. For the current record end=NULL, it has a business key prd_key and a surrogate key prd_id")
-        desc_sales("References the product's business key prd_key and the customer's surrogate key cst_id. Contains the order date order_dt.")
-        desc_cust("Has customer business key cst_key, surrogate key cst_id, and modification date cst_create_date. For a single pair of cst_key and cst_id, it may have multiple records with different timestamps and varying field values.")
-    end
-
-    %% ===== DATA MODEL (CENTER) =====
-    subgraph model[" Data Model"]
-        prd_info[/"prd_info"/]
-        prd_key(["prd_key"])
-        sales_details["sales_details"]
-        cust_id(["cst_id"])
-        cust_info[\"cust_info"\]
-
-        %% Thick arrows inside the model
-        prd_key ==> prd_info
-        sales_details ==> prd_key
-        sales_details ==> cust_id
-        cust_id ==> cust_info
-    end
-
-    %% ===== REQUIREMENTS (BOTTOM) =====
-    subgraph requirements[" Requirements"]
-        req_prd["Need to match the sale with the product's surrogate key at the time of purchase, according to its time-based changes (SCD 2)"]
-        req_cust["Need to match the sale with only the latest customer record containing the currently actual data (SCD 1)"]
-    end
-
-    %% ===== TOP & BOTTOM CONNECTIONS (Dashed) =====
-    desc_prd -.-> prd_info
-    desc_sales -.-> sales_details
-    desc_cust -.-> cust_info
-
-    prd_info -.-> req_prd
-    cust_info -.-> req_cust
-
-    %% ===== STYLING =====
-    classDef table fill:#6a3ab2,stroke:#333,stroke-width:2px,color:#fff;
-    classDef key fill:#f4a261,stroke:#333,stroke-width:2px,color:#000;
-    classDef desc fill:#f5e6d3,stroke:#333,stroke-width:1px,color:#000;
-    classDef req fill:#fff3b0,stroke:#333,stroke-width:1px,color:#000;
-    classDef center fill:#4a7fb5,stroke:#333,stroke-width:2px,color:#fff;
-
-    class prd_info,cust_info table;
-    class prd_key,cust_id key;
-    class desc_prd,desc_sales,desc_cust desc;
-    class req_prd,req_cust req;
-    class sales_details center;
-
-    style model fill:#e8f4f8,stroke:#4a7fb5,stroke-width:2px
-    style descriptions fill:#faf0e6,stroke:#d4a574,stroke-width:2px
-    style requirements fill:#fffde7,stroke:#f0c040,stroke-width:2px
-```
+![Diagram1](../img/part1_diagram1.png)
 
 As can be seen from the diagram, the model consists of one fact table and two dimension tables. The "Product" dimension is implemented as a Slowly Changing Dimension Type 2 (SCD 2), meaning it stores the full history of changes. The "Customer" dimension, on the contrary, is implemented as a Slowly Changing Dimension Type 1 (SCD 1): it does not store history, but simply overwrites attributes, keeping only their current state.
 
