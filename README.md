@@ -17,7 +17,7 @@ config:
     showIcons: true
 ---
 treeView-beta
-  DWH_StepByStep
+  DWH_StepByStep/
     Part_01/
     README.md
     LICENSE
