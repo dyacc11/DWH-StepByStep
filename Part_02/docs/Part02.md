@@ -801,7 +801,7 @@ For the second incremental load, we will take products updated in March and use 
 
 A small dataset is convenient because it allows for easy visual verification of data integrity: it can fit on a single spreadsheet page.
 
-![Data Sheet](../Pasted%20image%2020261104000045.png)
+![Data Sheet](../img/part2_diagram11.png)
 
 As clearly shown in the image, it is easy to highlight logically related cells with different colors and verify the correctness of the dataset. Additionally, three dates are highlighted in different colors (green, purple, blue) following the `ETL loads` marker.
 These dates represent simulated ETL load dates:
