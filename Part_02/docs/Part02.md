@@ -838,5 +838,5 @@ We have explored the process of creating small test datasets and a data simulato
 
 ## References
 
-* Source code for this article: [DWH Step By Step Part 2](https://github.com/dyacc11/DWH_StepByStep/Part_02)
-- **[Part 1: Data Correction and Generation](https://github.com/dyacc11/DWH_StepByStep/Part_01)**
+* Source code for this article: [DWH Step By Step Part 2](https://github.com/dyacc11/DWH-StepByStep/tree/main/Part_02)
+* [Part 1: Data Correction and Generation](https://github.com/dyacc11/DWH-StepByStep/tree/main/Part_01)
