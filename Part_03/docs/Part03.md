@@ -5,6 +5,7 @@
 <i>"Done is better than perfect".</i>
 <br>- Sheryl Sandberg
 </p>
+
 ## Which architecture to choose?
 
 If you ask data engineers today which architecture to choose for a pipeline that loads data into a DWH, most would likely suggest the medallion architecture:
